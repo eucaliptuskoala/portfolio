@@ -1,0 +1,29 @@
+.about-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.about-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 160px;
+}
+
+.fact {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.fact strong {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
