@@ -80,3 +80,11 @@
   line-height: 1.5;
   margin: 0;
 }
+
+.timeline-card-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #534AB7;
+  text-decoration: none;
+}

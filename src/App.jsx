@@ -19,12 +19,28 @@ function App() {
     document.body.removeChild(link);
   };
 
-  const timelineItems = education.map(edu => ({
+  const formatDate = (dateStr) => {
+    const d = new Date(dateStr);
+    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+  };
+
+  const educationItems = education.map(edu => ({
     date: edu.period,
     title: edu.institution,
     subtitle: edu.degree,
     description: edu.description,
   }));
+
+  const projectItems = [...projects]
+    .filter(p => p.creationDate)
+    .sort((a, b) => new Date(b.creationDate) - new Date(a.creationDate))
+    .map(p => ({
+      date: formatDate(p.creationDate),
+      title: p.title,
+      subtitle: p.tags.join(', '),
+      description: p.fullDescription || p.description,
+      link: p.gitLink || null,
+    }));
 
   return (
     <div className="wrap">
@@ -97,12 +113,8 @@ function App() {
 
       {activeTab === 'work' && (
         <section className="section" style={{ paddingTop: '80px' }}>
-          <p className="section-label">selected work</p>
-          <div className="projects-grid" style={{ gridTemplateColumns: '1fr', gap: '16px' }}>
-            {projects.map(project => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
+          <p className="section-label">all projects</p>
+          <Timeline items={projectItems} />
           <button className="btn-secondary" style={{ marginTop: '32px' }} onClick={() => setActiveTab('home')}>← back to home</button>
         </section>
       )}
@@ -119,7 +131,7 @@ function App() {
           </div>
           <div style={{ marginTop: '32px' }}>
             <p className="section-label">education</p>
-            <Timeline items={timelineItems} />
+            <Timeline items={educationItems} />
           </div>
           <button className="btn-secondary" style={{ marginTop: '32px' }} onClick={() => setActiveTab('home')}>← back to home</button>
         </section>

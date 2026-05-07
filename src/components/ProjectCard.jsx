@@ -12,9 +12,9 @@ function ProjectCard({ project }) {
         </span>
       </div>
       <p className="project-desc">{project.description}</p>
-      {project.githubLink && (
-        <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="project-link">
-          view on Git Platform →
+      {project.gitLink && (
+        <a href={project.gitLink} target="_blank" rel="noopener noreferrer" className="project-link">
+          view repo →
         </a>
       )}
     </div>

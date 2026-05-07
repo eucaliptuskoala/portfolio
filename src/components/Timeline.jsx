@@ -15,6 +15,9 @@ function Timeline({ items }) {
               {item.description && (
                 <p className="timeline-card-desc">{item.description}</p>
               )}
+              {item.link && (
+                <a href={item.link} target="_blank" rel="noopener noreferrer" className="timeline-card-link">view repo →</a>
+              )}
             </div>
           </div>
         </div>

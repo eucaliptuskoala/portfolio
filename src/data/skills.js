@@ -2,17 +2,17 @@ export const skillCategories = [
   {
     id: 1,
     name: "Data / ML",
-    skills: ["Python, Pandas", "TF-IDF, Scikit-learn", "rapidfuzz, networkx"]
+    skills: ["Python, Pandas", "TF-IDF", "rapidfuzz, networkx"]
   },
   {
     id: 2,
     name: "ML",
-    skills: ["Scikit-learn", "Clustering: Hierarchical, DBSCAN", "Classification: Logistic Regression, SVM, Decision Trees", "Regression: Linear Regression, Ordinal Classification"]
+    skills: ["Scikit-learn", "Supervised · Unsupervised learning"]
   },
   {
     id: 3,
     name: "Backend",
-    skills: ["Java, Spring Boot", "C#, .NET", "REST APIs", "SOLID, Clean architecture"]
+    skills: ["Java, Spring Boot", "C#, .NET", "SOLID", "Clean architecture"]
   },
   {
     id: 4,
@@ -27,19 +27,28 @@ export const skillCategories = [
   {
     id: 6,
     name: "AI",
-    skills: ["LLMs, Ollama, MLX", "OpenClaw, Hermes Agent", "n8n, automations", "ComfyUI, huggingface"]
+    skills: ["LLMs, Ollama, MLX", "OpenClaw, Hermes", "n8n, automations"]
   }
 ];
 
 export const heroSkills = [
   "Python",
   "Java · Spring Boot",
-  "React",
-  "ML / K-Means",
+  "C# · .NET",
+  "React JS",
+  "HTML, CSS",
+  "SOLID, Clean architecture",
+  "ML",
+  "Supervised · Unsupervised learning",
   "NLP",
   "Scikit-learn",
-  "TensorFlow",
-  "Docker",
+  "GitLab", 
+  "GitHub",
+  "Docker", 
   "AWS",
-  "Git"
+  "Ollama",
+  "MLX",
+  "OpenClaw",
+  "Hermes",
+  "n8n"
 ];
