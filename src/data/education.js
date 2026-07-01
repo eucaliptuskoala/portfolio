@@ -5,15 +5,15 @@ export const education = [
     degree: "ICT & Software Engineering",
     period: "2022 - 2026",
     location: "Eindhoven, NL",
-    description: "Bachelor's degree in ICT with focus on software engineering"
+    description: "Bachelor's degree in ICT with focus on software engineering and machine learning."
   },
   {
     id: 2,
-    institution: "DAF Trucks",
-    degree: "Data Science & ML Intern",
-    period: "2025 - 2026",
-    location: "Eindhoven, NL",
-    description: "Customer segmentation using ML pipelines, working with 226K+ customers"
+    institution: "Mendel University",
+    degree: "Exchange Semester — AI & Perception Systems",
+    period: "2025",
+    location: "Brno, CZ",
+    description: "Explored AI fundamentals, fuzzy logic systems, perceptron learning, and VR-based perception experiments."
   },
   {
     id: 3,
@@ -21,6 +21,6 @@ export const education = [
     degree: "Computer Science Track",
     period: "2018 - 2022",
     location: "Ukraine",
-    description: "Specialized in computer science and mathematics"
+    description: "Specialized in computer science and mathematics."
   }
 ];

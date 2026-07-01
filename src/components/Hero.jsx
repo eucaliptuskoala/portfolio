@@ -1,61 +1,37 @@
 import Reveal from './Reveal';
-import MagneticBtn from './MagneticBtn';
-import NodeNetwork from './NodeNetwork';
 
 export default function Hero() {
   return (
     <section id="hero" className="hero">
+      <div className="hero-bg">
+        <div className="hero-bg-glow" />
+      </div>
       <div className="container">
-        <div className="g">
-          <div className="gc hero-left">
-            <Reveal><p className="hero-eyebrow">Portfolio</p></Reveal>
-            <Reveal delay={100}>
-              <h1 className="hero-title">Building systems<br />that survive <em>reality.</em></h1>
-            </Reveal>
-            <Reveal delay={200}>
-              <p className="hero-sub">
-                Software Engineer and Machine Learning Engineer focused on clean architecture,
-                production systems, and applied AI.
-              </p>
-            </Reveal>
-            <Reveal delay={300}>
-              <div className="hero-actions">
-                <MagneticBtn className="btn btn-primary" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
-                  Explore Projects
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 8h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                </MagneticBtn>
-                <MagneticBtn className="btn btn-secondary" href="https://github.com/ivanbodnar" target="_blank" rel="noopener noreferrer">
-                  View GitHub
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8m0 0H7m5 0v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                </MagneticBtn>
-              </div>
-            </Reveal>
-            <Reveal delay={400}>
-              <div className="hero-timeline">
-                <div className="hero-timeline-item">
-                  <div className="hero-timeline-dot" />
-                  <span className="hero-timeline-label">Domain</span>
-                  <span className="hero-timeline-value">Software Engineering</span>
-                </div>
-                <div className="hero-timeline-item">
-                  <div className="hero-timeline-dot" />
-                  <span className="hero-timeline-label">Domain</span>
-                  <span className="hero-timeline-value">Machine Learning</span>
-                </div>
-                <div className="hero-timeline-item">
-                  <div className="hero-timeline-dot" />
-                  <span className="hero-timeline-label">Domain</span>
-                  <span className="hero-timeline-value">Data Science</span>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-          <div className="gc hero-right">
-            <div className="hero-atmosphere">
-              <NodeNetwork />
-            </div>
-          </div>
+        <div className="hero-inner">
+          <Reveal>
+            <h1 className="hero-name">
+              Ivan <em>Bodnar</em>
+            </h1>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="hero-role">Software Engineer &amp; Machine Learning Engineer</p>
+          </Reveal>
+          <Reveal delay={150}>
+            <p className="hero-tagline">
+              Building systems that survive reality.
+            </p>
+          </Reveal>
+          <Reveal delay={200}>
+            <p className="hero-intro">
+              Clean architecture. Applied ML. Systems that last.
+            </p>
+          </Reveal>
         </div>
+      </div>
+      <div className="hero-scroll">
+        <svg width="18" height="24" viewBox="0 0 18 24" fill="none">
+          <path d="M9 2v18m0 0l-6-6m6 6l6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
       </div>
     </section>
   );

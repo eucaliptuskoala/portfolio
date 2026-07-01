@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const links = [
   { id: 'about', label: 'About' },
@@ -11,7 +12,9 @@ const links = [
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(() =>
+    typeof window !== 'undefined' && window.scrollY < 60
+  );
   const lastScroll = useRef(0);
 
   useEffect(() => {
@@ -29,7 +32,7 @@ export default function Nav() {
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      setHidden(y > lastScroll.current && y > 200);
+      setHidden(y < 60 || (y > lastScroll.current && y > 200));
       lastScroll.current = y;
     };
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -38,7 +41,6 @@ export default function Nav() {
 
   return (
     <nav className={hidden ? 'hidden' : ''}>
-      <a className="nav-logo" href="#">violetred<span>.</span>hitheaven</a>
       <ul className={`nav-links ${mobileOpen ? 'open' : ''}`}>
         {links.map(l => (
           <li key={l.id}>
@@ -50,6 +52,7 @@ export default function Nav() {
           </li>
         ))}
       </ul>
+      <ThemeToggle />
       <button className={`mobile-menu-btn ${mobileOpen ? 'open' : ''}`}
               onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
         <span /><span /><span />
