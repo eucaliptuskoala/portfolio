@@ -53,3 +53,5 @@ Switched on 2026-07-01. Inspired by Apollo (Deadlock by Valve).
 | `--muted` | Stone | `#7a7569` |
 | `--border` | — | `rgba(26,24,20,0.10)` |
 | `--border-light` | — | `rgba(26,24,20,0.04)` |
+
+to think
