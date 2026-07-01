@@ -1,12 +1,12 @@
 :root {
-  --bg: #0C0B09;
-  --surface: #141311;
-  --fg: #F0EDE2;
-  --muted: #AFA692;
-  --accent: #B5A460;
-  --accent-hover: #C9B774;
-  --border: rgba(240,237,226,0.08);
-  --border-light: rgba(237,234,240,0.03);
+  --bg: #0a0808;
+  --surface: #120c0a;
+  --fg: #f0e8e0;
+  --muted: #9a7a70;
+  --accent: #c0392b;
+  --accent-hover: #8a2a1e;
+  --border: rgba(240,232,224,0.08);
+  --border-light: rgba(240,232,224,0.03);
   --font-display: 'DM Serif Display', 'EB Garamond', Georgia, serif;
   --font-body: 'Space Grotesk', 'Inter', -apple-system, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
@@ -1045,10 +1045,10 @@ footer {
 
 /* ---------- Light theme ---------- */
 html[data-theme="light"] {
-  --bg: #F5F2EB;
-  --surface: #FFFFFF;
-  --fg: #1A1814;
-  --muted: #7A7569;
+  --bg: #f5f2eb;
+  --surface: #ffffff;
+  --fg: #1a1814;
+  --muted: #7a7569;
   --border: rgba(26,24,20,0.10);
   --border-light: rgba(26,24,20,0.04);
 }

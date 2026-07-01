@@ -1,4 +1,4 @@
-import principles from '../data/philosophy';
+import { principles } from '../data/philosophy';
 import Reveal from './Reveal';
 
 export default function Philosophy() {

@@ -1,4 +1,4 @@
-import skillGroups from '../data/skills';
+import { skillGroups } from '../data/skills';
 import Reveal from './Reveal';
 
 export default function Skills() {

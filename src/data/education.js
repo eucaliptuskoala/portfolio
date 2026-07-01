@@ -1,26 +1,20 @@
-export const education = [
+const education = [
   {
     id: 1,
     institution: "Fontys University of Applied Sciences",
-    degree: "ICT & Software Engineering",
-    period: "2022 - 2026",
+    degree: "ICT",
+    period: "2023 - Present",
     location: "Eindhoven, NL",
-    description: "Bachelor's degree in ICT with focus on software engineering and machine learning."
+    description: "Bachelor's degree in ICT with focus on software engineering and artificial intelligence."
   },
   {
     id: 2,
     institution: "Mendel University",
-    degree: "Exchange Semester — AI & Perception Systems",
+    degree: "BIP — Mastering the Future: From 3D Games to AI Insights",
     period: "2025",
     location: "Brno, CZ",
-    description: "Explored AI fundamentals, fuzzy logic systems, perceptron learning, and VR-based perception experiments."
-  },
-  {
-    id: 3,
-    institution: "High School",
-    degree: "Computer Science Track",
-    period: "2018 - 2022",
-    location: "Ukraine",
-    description: "Specialized in computer science and mathematics."
+    description: "Explored AI fundamentals, computer vision, fuzzy logic systems, neural networks (perceptron)."
   }
 ];
+
+export { education };

@@ -21,4 +21,4 @@ const principles = [
   }
 ];
 
-export default principles;
+export { principles };

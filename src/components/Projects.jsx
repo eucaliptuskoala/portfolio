@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import projects from '../data/projects';
+import { projects } from '../data/projects';
 import Reveal from './Reveal';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
@@ -10,7 +10,8 @@ export default function Projects() {
   const [filter, setFilter] = useState('All');
   const [selected, setSelected] = useState(null);
 
-  const filtered = filter === 'All' ? projects : projects.filter(p => p.category === filter);
+  const sorted = [...projects].sort((a, b) => b.year.localeCompare(a.year));
+  const filtered = filter === 'All' ? sorted : sorted.filter(p => p.category === filter);
 
   return (
     <section id="projects" className="section">
