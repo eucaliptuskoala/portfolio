@@ -64,7 +64,7 @@ const skillGroups = [
       'Scrum', 
       'Jira', 
       'Project Planning', 
-      'Project Planning', 
+      'Project Management', 
       'Technical Documentation'
     ]
   }
