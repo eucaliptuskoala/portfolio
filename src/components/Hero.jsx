@@ -3,9 +3,6 @@ import Reveal from './Reveal';
 export default function Hero() {
   return (
     <section id="hero" className="hero">
-      <div className="hero-bg">
-        <div className="hero-bg-glow" />
-      </div>
       <div className="container">
         <div className="hero-inner">
           <Reveal>
@@ -18,12 +15,7 @@ export default function Hero() {
           </Reveal>
           <Reveal delay={150}>
             <p className="hero-tagline">
-              Building systems that survive reality.
-            </p>
-          </Reveal>
-          <Reveal delay={200}>
-            <p className="hero-intro">
-              Clean architecture. Applied ML. Systems that last.
+              Making things that matter.
             </p>
           </Reveal>
         </div>

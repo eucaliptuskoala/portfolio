@@ -366,24 +366,6 @@ nav.hidden {
   align-items: center;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.hero-bg-glow {
-  position: absolute;
-  width: 50vw;
-  height: 50vw;
-  border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 4%, transparent) 0%, transparent 70%);
-  top: -20%;
-  right: -10%;
-  filter: blur(120px);
-}
-
 .hero-inner {
   position: relative;
   z-index: 1;
@@ -1066,6 +1048,3 @@ html[data-theme="light"] .modal-overlay {
   background: rgba(245,242,235,0.95);
 }
 
-html[data-theme="light"] .hero-bg-glow {
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 8%, transparent) 0%, transparent 70%);
-}
