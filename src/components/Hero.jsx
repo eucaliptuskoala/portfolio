@@ -11,7 +11,7 @@ export default function Hero() {
             </h1>
           </Reveal>
           <Reveal delay={100}>
-            <p className="hero-role">Software Engineer &amp; Machine Learning Engineer</p>
+            <p className="hero-role">Software &amp; AI Engineer</p>
           </Reveal>
           <Reveal delay={150}>
             <p className="hero-tagline">
