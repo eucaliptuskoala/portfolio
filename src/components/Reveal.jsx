@@ -25,5 +25,5 @@ export default function Reveal({ children, delay = 0, className = '' }) {
     return () => observer.disconnect();
   }, [delay]);
 
-  return <div ref={ref} className={`reveal reveal-delay-${delay / 100} ${className}`}>{children}</div>;
+  return <div ref={ref} className={`reveal ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
 }

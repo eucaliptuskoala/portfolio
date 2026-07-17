@@ -9,11 +9,7 @@ import { useEffect, useRef, useState } from 'react';
  * hidden from assistive tech.
  */
 
-function clamp01(n) {
-  if (n < 0) return 0;
-  if (n > 1) return 1;
-  return n;
-}
+const clamp01 = (n) => Math.min(1, Math.max(0, n));
 
 export default function ScrollLine() {
   const [progress, setProgress] = useState(0);

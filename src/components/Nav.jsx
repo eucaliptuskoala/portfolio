@@ -32,7 +32,7 @@ export default function Nav() {
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      setHidden(y < 60 || (y > lastScroll.current && y > 200));
+      setHidden(y < 60 || y > lastScroll.current);
       lastScroll.current = y;
     };
     window.addEventListener('scroll', onScroll, { passive: true });

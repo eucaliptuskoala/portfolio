@@ -11,6 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+  <script>
+    document.documentElement.setAttribute('data-theme',
+      localStorage.getItem('theme') === 'light' ? 'light' : 'dark'
+    );
+  </script>
   <div class="noise-fixed"></div>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>

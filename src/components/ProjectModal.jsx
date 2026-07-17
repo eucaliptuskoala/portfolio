@@ -1,15 +1,21 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function ProjectModal({ project, onClose }) {
+  const onCloseRef = useRef(onClose);
+
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  });
+
   useEffect(() => {
     document.body.style.overflow = 'hidden';
-    const handler = (e) => e.key === 'Escape' && onClose();
+    const handler = (e) => e.key === 'Escape' && onCloseRef.current();
     document.addEventListener('keydown', handler);
     return () => {
       document.body.style.overflow = '';
       document.removeEventListener('keydown', handler);
     };
-  }, [onClose]);
+  }, []);
 
   const d = project.detail;
   return (

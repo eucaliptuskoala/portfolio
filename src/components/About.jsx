@@ -8,7 +8,7 @@ export default function About() {
         <div className="g">
           <div className="gc">
             <Reveal delay={100}>
-              <h2 className="section-title" style={{ marginBottom: 0, fontSize: 'clamp(28px, 3.5vw, 48px)' }}>
+              <h2 className="section-title about-title">
                 Engineer.<br />Architect.<br />Researcher.
               </h2>
             </Reveal>

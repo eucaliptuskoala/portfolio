@@ -29,7 +29,7 @@ export default function Projects() {
           </div>
         </Reveal>
       </div>
-      <div className="container" style={{ paddingTop: 48 }}>
+      <div className="container projects-spacer">
         <div className="projects-grid">
           {filtered.map((p, i) => (
             <Reveal key={p.id} delay={Math.min(i * 50, 300)}>
