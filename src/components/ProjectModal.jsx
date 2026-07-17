@@ -1,15 +1,22 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function ProjectModal({ project, onClose }) {
   const onCloseRef = useRef(onClose);
+  const [closing, setClosing] = useState(false);
+
+  useEffect(() => { onCloseRef.current = onClose; });
+
+  const handleClose = () => setClosing(true);
 
   useEffect(() => {
-    onCloseRef.current = onClose;
-  });
+    if (!closing) return;
+    const timer = setTimeout(() => onCloseRef.current(), 300);
+    return () => clearTimeout(timer);
+  }, [closing]);
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
-    const handler = (e) => e.key === 'Escape' && onCloseRef.current();
+    const handler = (e) => e.key === 'Escape' && handleClose();
     document.addEventListener('keydown', handler);
     return () => {
       document.body.style.overflow = '';
@@ -19,8 +26,8 @@ export default function ProjectModal({ project, onClose }) {
 
   const d = project.detail;
   return (
-    <div className="modal-overlay" onClick={(e) => e.target === e.currentTarget && onClose()}>
-      <button className="modal-close" onClick={onClose} aria-label="Close">
+    <div className={`modal-overlay${closing ? ' closing' : ''}`} onClick={(e) => e.target === e.currentTarget && handleClose()}>
+      <button className="modal-close" onClick={handleClose} aria-label="Close">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12m0-12L4 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
       </button>
       <div className="modal-content">
