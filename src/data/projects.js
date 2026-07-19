@@ -14,7 +14,11 @@ const projects = [
       architecture: 'Clean architecture — domain logic separated from infrastructure. Backend in Spring Boot, React frontend, PostgreSQL via Supabase. When I migrated from MySQL to PostgreSQL mid-project, the domain layer didn\'t need to change. That was the proof the separation was working.',
       challenges: 'Keeping the architecture clean under the pressure of just wanting to ship. Every shortcut felt reasonable in the moment. Most of them weren\'t.',
       outcomes: 'It\'s live. I use it. I stopped smoking during development — partly because I was tracking it there.',
-      techStack: ['Java', 'Spring Boot', 'React', 'Tailwind', 'PostgreSQL', 'Flyway', 'Docker', 'GitHub Actions', 'Vercel', 'Render', 'Supabase', 'Resend']
+      techStack: ['Java', 'Spring Boot', 'React', 'Tailwind', 'PostgreSQL', 'Flyway', 'Docker', 'GitHub Actions', 'Vercel', 'Render', 'Supabase', 'Resend'],
+      links: {
+        live: 'https://...',
+        github: 'https://github.com/eucaliptuskoala/solen',
+      }
     }
   },
   {
@@ -50,7 +54,10 @@ const projects = [
       architecture: 'Separate XGBoost model trained per horse on engineered features (rolling averages, workload ratios, time features). Flask API serves predictions for the next 7 days. Gemini API generates the weekly summary from historical and predicted data combined.',
       challenges: 'Sparse and irregular data — horses train on different schedules with different exercises. Built rolling window features (3/7/14-day) to normalize across these variations. Small dataset meant per-horse models instead of one general model.',
       outcomes: 'Trainers could see forecasted training load and automatically generated weekly summaries for each horse. Freed up expert time from manual reporting.',
-      techStack: ['Python', 'Pandas', 'XGBoost', 'Scikit-Learn', 'Flask', 'React', 'TypeScript', 'LLM', 'Gemini API']
+      techStack: ['Python', 'Pandas', 'XGBoost', 'Scikit-Learn', 'Flask', 'React', 'TypeScript', 'LLM', 'Gemini API'],
+      links: {
+        github: 'https://github.com/Boyan-Apostolov/horse-performance-prediction',
+      }
     }
   },
   {
@@ -68,7 +75,10 @@ const projects = [
       architecture: 'Business data pulled and formatted into structured context before being sent to the local model — raw data alone overwhelmed it. Two interaction modes: scheduled report generation and a conversational chat interface. All inference runs locally via Ollama, nothing leaves the network.',
       challenges: 'First time working with local LLMs. Figuring out context formatting, prompt structure, and response handling from scratch with Mistral 7B. Balancing response quality with the constraints of a 7B model running locally.',
       outcomes: 'Non-technical team members could get automated weekly reports and ask questions about their data in plain language. Proved that local LLM integration is viable for privacy-sensitive business environments.',
-      techStack: ['Java', 'Spring Boot', 'React', 'Ollama', 'Mistral 7B', 'Docker', 'MSSQL', 'REST APIs']
+      techStack: ['Java', 'Spring Boot', 'React', 'Ollama', 'Mistral 7B', 'Docker', 'MSSQL', 'REST APIs'],
+      links: {
+        gitlab: 'https://git.fhict.nl/I481970/basworldheptabytes',
+      }
     }
   },
   {
@@ -86,7 +96,7 @@ const projects = [
       architecture: 'Spring Boot REST API with MySQL. React frontend. Booking conflict validation handled server-side — any overlapping reservation is rejected at the database level.',
       challenges: 'Keeping the team moving while also writing code. Towards the end I was effectively running the project — assigning tasks, unblocking people, keeping the backlog honest.',
       outcomes: 'System went live and replaced the manual process. Concurrent booking conflicts handled reliably by the validation logic.',
-      techStack: ['Java', 'Spring Boot', 'React', 'MySQL', 'Docker', 'Scrum', 'Jira']
+      techStack: ['Java', 'Spring Boot', 'React', 'MySQL', 'Docker', 'Scrum', 'Jira'],
     }
   },
   {
@@ -104,7 +114,11 @@ const projects = [
       architecture: 'Survey responses mapped to psychological features (sleep quality, life satisfaction, recent life events). Two models: Decision Tree for interpretability — I traced the decision path to generate actionable feedback per prediction. Ordinal Regression for classification — chosen because stress levels have natural order (low/moderate/high) that standard classifiers ignore.',
       challenges: 'Tiny dataset. 38 records with class imbalance. Ordinal Regression was not covered in the semester — I learned it independently because it fit the problem better than what we were taught.',
       outcomes: '~67% classification accuracy on balanced data (38 records). Given the dataset size, the methodology mattered more than the number — the Decision Tree produced interpretable outputs: if the deciding feature was sleep-related, the system suggested sleep improvements.',
-      techStack: ['Python', 'Pandas', 'Scikit-Learn', 'Decision Tree', 'Ordinal Regression', 'Matplotlib']
+      techStack: ['Python', 'Pandas', 'Scikit-Learn', 'Decision Tree', 'Ordinal Regression', 'Matplotlib'],
+      links: {
+        live: 'https://student-stress-fontys.streamlit.app/',
+        github: 'https://github.com/eucaliptuskoala/student-stress',
+      }
     }
   },
   {
@@ -122,7 +136,11 @@ const projects = [
       architecture: 'Same clean structure that became Solen — domain modules isolated from infrastructure. Flyway for migrations. Deployed to AWS.',
       challenges: 'First time deploying to cloud infrastructure. Had to research AWS options, make infrastructure decisions, and figure out deployment from scratch.',
       outcomes: 'The core domain module survived into Solen. AWS deployment worked. The project proved the architecture was worth keeping.',
-      techStack: ['Java', 'Spring Boot', 'React', 'MySQL', 'Flyway', 'JUnit', 'Mockito', 'AWS']
+      techStack: ['Java', 'Spring Boot', 'React', 'MySQL', 'Flyway', 'JUnit', 'Mockito', 'AWS'],
+      links: {
+        gitlab_frontend: 'https://git.fhict.nl/I539830/habit_tracker_fe',
+        gitlab_backend: 'https://git.fhict.nl/I539830/habit_tracker_be'
+      }
     }
   },
   {
@@ -140,7 +158,10 @@ const projects = [
       architecture: 'Two platforms: ASP.NET web app for students, WinForms desktop client for admins. SQL Server backend with Entity Framework. Three-tier architecture throughout.',
       challenges: 'Second semester. Still figuring out how any of this worked. WinForms is not fun to build in. But the separation between admin and user interfaces was a deliberate design decision that I\'m still glad I made.',
       outcomes: 'A working dual-platform application. The idea was solid as well as the execution.',
-      techStack: ['C#', 'ASP.NET', 'WinForms', 'SQL Server']
+      techStack: ['C#', 'ASP.NET', 'WinForms', 'SQL Server'],
+      links: {
+        gitlab: 'https://git.fhict.nl/I539830/student-guide-application',
+      }
     }
   }
 ];
