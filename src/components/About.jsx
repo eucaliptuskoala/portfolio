@@ -16,7 +16,7 @@ export default function About() {
           <div className="gc about-body">
             <Reveal delay={200}>
               <p>
-                I came into software without a CS background. 
+                I came into ICT without a CS background. 
                 No head start, no prior knowledge — just deadlines I was always chasing.
               </p>
             </Reveal>

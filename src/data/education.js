@@ -2,7 +2,7 @@ const education = [
   {
     id: 1,
     institution: "Fontys University of Applied Sciences",
-    degree: "ICT",
+    degree: "Bachelor Information & Communication Technologies",
     period: "2023 - Present",
     location: "Eindhoven, NL",
     description: "Bachelor's degree in ICT with focus on software engineering and artificial intelligence."
