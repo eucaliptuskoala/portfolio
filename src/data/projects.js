@@ -1,5 +1,26 @@
 const projects = [
   {
+    id: 'nine-lives',
+    title: 'Nine Lives',
+    tagline: 'Your cat. Digitized. Playable.',
+    year: '2026',
+    category: 'Hackathon',
+    tech: ['React', 'FastAPI', 'Python', 'ViT', 'YOLOv11', 'Gemini', 'FLUX', 'Supabase'],
+    description: 'Upload a photo of your cat — it gets classified by breed and fur color, an AI generates a unique pixel art avatar and lore, and you get a playable roguelike character. Nine lives. When they\'re gone, the cat moves to the Memorial.',
+    detail: {
+      context: 'Built for #HackTheKitty (June 24 – July 7, 2026). The idea came from a recent loss of a pet. I wanted to build something that immortalizes animals in a way that feels playful rather than sad.',
+      problem: 'Two weeks, solo. Build something technically interesting, visually coherent, and actually working end-to-end.',
+      role: 'Solo Software & AI Engineer. Everything — ML pipeline, backend, frontend, deployment.',
+      architecture: 'ML pipeline: ViT for breed classification, YOLOv11 segmentation + KMeans for fur color extraction. Gemini generates name, stats, and lore based on breed and color. FLUX generates the pixel art avatar. FastAPI backend serves the pipeline, React frontend handles the game loop. Supabase for auth, storage, and database.',
+      challenges: 'Integrating five different ML/AI services into one coherent pipeline under a two-week deadline. Getting FLUX to consistently output pixel art style took most of the prompt engineering time.',
+      outcomes: 'Finished 12th out of 127 submissions. Judge feedback: "technically impressive and highly innovative submission." The game worked end-to-end — upload a photo, get a playable character in under a minute.',
+      techStack: ['React', 'Vite', 'TypeScript', 'Python', 'FastAPI', 'Supabase', 'ViT', 'YOLOv11', 'Scikit-Learn', 'Gemini', 'FLUX', 'HuggingFace'],
+      links: {
+        github: 'https://github.com/eucaliptuskoala/nine-lives',
+      }
+    }
+  },
+  {
     id: 'solen',
     title: 'Solen',
     tagline: 'Built because I needed it.',
