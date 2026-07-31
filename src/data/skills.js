@@ -24,7 +24,6 @@ const skillGroups = [
       'Data Analysis', 
       'Pandas', 
       'NumPy',
-      'MATLAB', 
       'Feature Engineering', 
       'Scikit-Learn',
       'Classification',
@@ -33,7 +32,23 @@ const skillGroups = [
       'TF-IDF',
       'Data Deduplication',
       'Sentence Transformers',
-      'Snowflake'
+      'Snowflake',
+      'Computer Vision',
+    ]
+  },
+    {
+    title: 'AI',
+    tags: [
+      'LLM',
+      'Prompt Engineering',
+      'Transformers',
+      'Hugging Face',
+      'Gemini',
+      'Ollama',
+      'oMLX',
+      'ViT',
+      'YOLOv11',
+      'FLUX'
     ]
   },
   {
@@ -54,7 +69,6 @@ const skillGroups = [
     title: 'Professional', 
     tags: [
       'Applied Research', 
-      'Communication',
       'Time Management', 
       'Problem Solving',
       'Critical Thinking',
@@ -62,8 +76,6 @@ const skillGroups = [
       'Team Leadership', 
       'Agile', 
       'Scrum', 
-      'Jira', 
-      'Project Planning', 
       'Project Management', 
       'Technical Documentation'
     ]
