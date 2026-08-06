@@ -1,4 +1,4 @@
-const projects = [
+const to_add_projects = [
   {
     id: 'solen',
     title: 'Solen',
@@ -22,3 +22,5 @@ const projects = [
     }
   }
 ];
+
+export default to_add_projects;

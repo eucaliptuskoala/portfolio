@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark;
   --bg: #0a0808;
   --surface: #120c0a;
   --fg: #f0e8e0;
@@ -25,6 +26,8 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-body);
@@ -32,6 +35,10 @@ html {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -987,6 +994,7 @@ footer {
 
 /* ---------- Light theme ---------- */
 html[data-theme="light"] {
+  color-scheme: light;
   --bg: #f5f2eb;
   --surface: #ffffff;
   --fg: #1a1814;
