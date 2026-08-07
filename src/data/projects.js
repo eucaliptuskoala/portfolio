@@ -8,7 +8,7 @@ const projects = [
     tech: ['React', 'FastAPI', 'Python', 'ViT', 'YOLOv11', 'Gemini', 'FLUX', 'Supabase', 'Vite', 'TypeScript', 'Scikit-Learn', 'HuggingFace'],
     description: 'Upload a photo of your cat — it gets classified by breed and fur color, an AI generates a unique pixel art avatar and lore, and you get a playable roguelike character. Nine lives. When they\'re gone, the cat moves to the Memorial.',
     detail: {
-      context: 'Built for #HackTheKitty (June 24 – July 7, 2026). The idea came from a recent loss of a pet. I wanted to build something that immortalizes animals in a way that feels playful rather than sad.',
+      context: 'Built for #HackTheKitty. The idea came from a recent loss of a pet. I wanted to build something that immortalizes animals in a way that feels playful rather than sad.',
       problem: 'Two weeks, solo. Build something technically interesting, visually coherent, and actually working end-to-end.',
       role: 'Solo Software & AI Engineer. Everything — ML pipeline, backend, frontend, deployment.',
       architecture: 'ML pipeline: ViT for breed classification, YOLOv11 segmentation + KMeans for fur color extraction. Gemini generates name, stats, and lore based on breed and color. FLUX generates the pixel art avatar. FastAPI backend serves the pipeline, React frontend handles the game loop. Supabase for auth, storage, and database.',
