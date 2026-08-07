@@ -4,7 +4,7 @@ import Reveal from './Reveal';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 
-const filters = ['All', 'Production', 'Internship', 'Client', 'Research', 'Academic'];
+const filters = ['All', ...new Set(projects.map(p => p.category))];
 
 export default function Projects() {
   const [filter, setFilter] = useState('All');

@@ -1,6 +1,35 @@
+import { useEffect, useRef, useState } from 'react';
 import Reveal from './Reveal';
 
+const EMAIL = 'i.bodnar2324@gmail.com';
+
 export default function Contact() {
+  const [copied, setCopied] = useState(false);
+  const timerRef = useRef(null);
+
+  useEffect(() => () => clearTimeout(timerRef.current), []);
+
+  const copyEmail = async () => {
+    const fallback = () => {
+      const el = document.createElement('textarea');
+      el.value = EMAIL;
+      el.style.position = 'fixed';
+      el.style.opacity = '0';
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    };
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+    } catch {
+      fallback();
+    }
+    setCopied(true);
+    clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section id="contact" className="section">
       <div className="container">
@@ -25,10 +54,15 @@ export default function Contact() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   LinkedIn
                 </a>
-                <a href="mailto:i.bodnar2324@gmail.com" className="contact-link">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /><path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                  i.bodnar2324@gmail.com
-                </a>
+                <button className={`contact-link ${copied ? 'copied' : ''}`} onClick={copyEmail} aria-label="Copy email address">
+                  {copied ? (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  ) : (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /><path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  )}
+                  {copied ? 'Copied' : EMAIL}
+                </button>
+                <span className="sr-only" role="status">{copied ? 'Email copied to clipboard' : ''}</span>
                 <a href={`${import.meta.env.BASE_URL}CV_Ivan_Bodnar.pdf`} download="CV_Ivan_Bodnar.pdf" className="contact-link">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   Download CV

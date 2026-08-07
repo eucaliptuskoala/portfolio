@@ -12,6 +12,7 @@
 </head>
 <body>
   <script>
+    document.documentElement.classList.add('js');
     document.documentElement.setAttribute('data-theme',
       localStorage.getItem('theme') === 'light' ? 'light' : 'dark'
     );

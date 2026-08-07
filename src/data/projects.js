@@ -5,7 +5,7 @@ const projects = [
     tagline: 'Your cat. Digitized. Playable.',
     year: '2026',
     category: 'Hackathon',
-    tech: ['React', 'FastAPI', 'Python', 'ViT', 'YOLOv11', 'Gemini', 'FLUX', 'Supabase'],
+    tech: ['React', 'FastAPI', 'Python', 'ViT', 'YOLOv11', 'Gemini', 'FLUX', 'Supabase', 'Vite', 'TypeScript', 'Scikit-Learn', 'HuggingFace'],
     description: 'Upload a photo of your cat — it gets classified by breed and fur color, an AI generates a unique pixel art avatar and lore, and you get a playable roguelike character. Nine lives. When they\'re gone, the cat moves to the Memorial.',
     detail: {
       context: 'Built for #HackTheKitty (June 24 – July 7, 2026). The idea came from a recent loss of a pet. I wanted to build something that immortalizes animals in a way that feels playful rather than sad.',
@@ -14,31 +14,8 @@ const projects = [
       architecture: 'ML pipeline: ViT for breed classification, YOLOv11 segmentation + KMeans for fur color extraction. Gemini generates name, stats, and lore based on breed and color. FLUX generates the pixel art avatar. FastAPI backend serves the pipeline, React frontend handles the game loop. Supabase for auth, storage, and database.',
       challenges: 'Integrating five different ML/AI services into one coherent pipeline under a two-week deadline. Getting FLUX to consistently output pixel art style took most of the prompt engineering time.',
       outcomes: 'Finished 12th out of 127 submissions. Judge feedback: "technically impressive and highly innovative submission." The game worked end-to-end — upload a photo, get a playable character in under a minute.',
-      techStack: ['React', 'Vite', 'TypeScript', 'Python', 'FastAPI', 'Supabase', 'ViT', 'YOLOv11', 'Scikit-Learn', 'Gemini', 'FLUX', 'HuggingFace'],
       links: {
         github: 'https://github.com/eucaliptuskoala/nine-lives',
-      }
-    }
-  },
-  {
-    id: 'solen',
-    title: 'Solen',
-    tagline: 'Built because I needed it.',
-    year: '2026',
-    category: 'Production',
-    tech: ['Clean Architecture', 'Spring Boot', 'React', 'PostgreSQL', 'CI/CD', 'Docker', 'Supabase'],
-    description: 'Habit tracker for people who\'ve lost contact with themselves. Tracking small things — showing up, not smoking, cleaning — creates a thread back to yourself when everything feels disconnected. I started this project and quit smoking because of it.',
-    detail: {
-      context: 'Most habit apps are either too simple or too bloated. I wanted something minimal that actually works for people with apathy — not gamification, not streaks for the sake of streaks. Just a quiet record of showing up.',
-      problem: 'Build something I\'d actually use myself. That meant clean code I wouldn\'t be ashamed to open six months later, and architecture that wouldn\'t fall apart when I wanted to add something new.',
-      role: 'Sole developer. Product design, architecture, full-stack implementation, CI/CD, deployment.',
-      architecture: 'Clean architecture — domain logic separated from infrastructure. Backend in Spring Boot, React frontend, PostgreSQL via Supabase. When I migrated from MySQL to PostgreSQL mid-project, the domain layer didn\'t need to change. That was the proof the separation was working.',
-      challenges: 'Keeping the architecture clean under the pressure of just wanting to ship. Every shortcut felt reasonable in the moment. Most of them weren\'t.',
-      outcomes: 'It\'s live. I use it. I stopped smoking during development — partly because I was tracking it there.',
-      techStack: ['Java', 'Spring Boot', 'React', 'Tailwind', 'PostgreSQL', 'Flyway', 'Docker', 'GitHub Actions', 'Vercel', 'Render', 'Supabase', 'Resend'],
-      links: {
-        live: 'https://...',
-        github: 'https://github.com/eucaliptuskoala/solen',
       }
     }
   },
@@ -48,7 +25,7 @@ const projects = [
     tagline: 'Customer segmentation for a marketing team that had none.',
     year: '2026',
     category: 'Internship',
-    tech: ['Python', 'Pandas', 'Scikit-Learn', 'TF-IDF', 'RapidFuzz', 'Sentence Transformers', 'Snowflake'],
+    tech: ['Python', 'Pandas', 'Scikit-Learn', 'TF-IDF', 'RapidFuzz', 'Sentence Transformers', 'Snowflake', 'Jupyter'],
     description: 'Built a customer segmentation pipeline for the Global Connected Services marketing team. Started with messy data, ended with actionable behavioral segments.',
     detail: {
       context: 'The marketing team had no way to view or segment their customer base. Existing segmentation was based on assumptions. Customer data had duplicates, misspelled names, inconsistent formats across systems.',
@@ -56,8 +33,7 @@ const projects = [
       role: 'Data science intern. Built the full pipeline: data ingestion, deduplication, clustering, and translated the results into business recommendations for the marketing and after-sales teams.',
       architecture: 'TF-IDF vectorization → Sentence Transformer embeddings → cosine similarity → connected components for deduplication. Then K-Means clustering on behavioral features (fleet size, service usage, subscription patterns) with PCA for dimensionality reduction. Elbow method and silhouette scores for cluster optimization.',
       challenges: 'Data quality was the main problem — duplicates, missing values, inconsistent naming. Corporate constraints on software and data privacy rules limited what tools I could use and where data could go.',
-      outcomes: 'Reduced customer records by ~5% after deduplication — removing enough noise to enable accurate per-customer analysis for the first time. The behavioral segments were adopted by the after-sales team for targeted campaign design.',
-      techStack: ['Python', 'Pandas', 'Scikit-Learn', 'TF-IDF', 'RapidFuzz', 'Sentence Transformers', 'Snowflake', 'Jupyter']
+      outcomes: 'Reduced customer records by ~5% after deduplication — removing enough noise to enable accurate per-customer analysis for the first time. The behavioral segments were adopted by the after-sales team for targeted campaign design.'
     }
   },
   {
@@ -66,7 +42,7 @@ const projects = [
     tagline: 'Automated weekly reports for horse trainers.',
     year: '2025',
     category: 'Client',
-    tech: ['Python', 'XGBoost', 'Flask', 'React', 'LLM', 'Gemini API'],
+    tech: ['Python', 'XGBoost', 'Flask', 'React', 'LLM', 'Gemini API', 'Pandas', 'Scikit-Learn', 'TypeScript'],
     description: 'A dashboard that forecasts training metrics for the upcoming week and generates automated summaries for horse owners — replacing manual weekly reports written by a PhD-level expert.',
     detail: {
       context: 'A horse training operation needed to send weekly performance reports to each horse owner. Writing these manually took significant time from their lead expert. They came to us to automate it.',
@@ -75,7 +51,6 @@ const projects = [
       architecture: 'Separate XGBoost model trained per horse on engineered features (rolling averages, workload ratios, time features). Flask API serves predictions for the next 7 days. Gemini API generates the weekly summary from historical and predicted data combined.',
       challenges: 'Sparse and irregular data — horses train on different schedules with different exercises. Built rolling window features (3/7/14-day) to normalize across these variations. Small dataset meant per-horse models instead of one general model.',
       outcomes: 'Trainers could see forecasted training load and automatically generated weekly summaries for each horse. Freed up expert time from manual reporting.',
-      techStack: ['Python', 'Pandas', 'XGBoost', 'Scikit-Learn', 'Flask', 'React', 'TypeScript', 'LLM', 'Gemini API'],
       links: {
         github: 'https://github.com/Boyan-Apostolov/horse-performance-prediction',
       }
@@ -87,7 +62,7 @@ const projects = [
     tagline: 'Local LLM for business reporting — no data leaves the network.',
     year: '2025',
     category: 'Client',
-    tech: ['Java', 'Spring Boot', 'React', 'Ollama', 'Mistral 7B', 'Docker', 'MSSQL'],
+    tech: ['Java', 'Spring Boot', 'React', 'Ollama', 'Mistral 7B', 'Docker', 'MSSQL', 'REST APIs'],
     description: 'Integrated a locally deployed Mistral 7B model into a business dashboard. Non-technical stakeholders could get automated KPI reports and ask questions about their data in plain language.',
     detail: {
       context: 'BAS World needed their operational data accessible to non-technical stakeholders without sending business data to external AI services.',
@@ -96,7 +71,6 @@ const projects = [
       architecture: 'Business data pulled and formatted into structured context before being sent to the local model — raw data alone overwhelmed it. Two interaction modes: scheduled report generation and a conversational chat interface. All inference runs locally via Ollama, nothing leaves the network.',
       challenges: 'First time working with local LLMs. Figuring out context formatting, prompt structure, and response handling from scratch with Mistral 7B. Balancing response quality with the constraints of a 7B model running locally.',
       outcomes: 'Non-technical team members could get automated weekly reports and ask questions about their data in plain language. Proved that local LLM integration is viable for privacy-sensitive business environments.',
-      techStack: ['Java', 'Spring Boot', 'React', 'Ollama', 'Mistral 7B', 'Docker', 'MSSQL', 'REST APIs'],
       links: {
         gitlab: 'https://git.fhict.nl/I481970/basworldheptabytes',
       }
@@ -108,7 +82,7 @@ const projects = [
     tagline: 'Office reservation system delivered under Agile pressure.',
     year: '2024',
     category: 'Client',
-    tech: ['Spring Boot', 'React', 'MySQL', 'Docker', 'Scrum'],
+    tech: ['Spring Boot', 'React', 'MySQL', 'Docker', 'Scrum', 'Java', 'Jira'],
     description: 'Built an office reservation system as Scrum Master and full-stack developer. Desk bookings, meeting rooms, scheduling — with solid conflict validation so two people can\'t book the same space at the same time.',
     detail: {
       context: 'Driessen was moving to hybrid work and needed a digital system to manage desk and meeting room bookings across office locations. Before this, it was email and spreadsheets.',
@@ -117,7 +91,6 @@ const projects = [
       architecture: 'Spring Boot REST API with MySQL. React frontend. Booking conflict validation handled server-side — any overlapping reservation is rejected at the database level.',
       challenges: 'Keeping the team moving while also writing code. Towards the end I was effectively running the project — assigning tasks, unblocking people, keeping the backlog honest.',
       outcomes: 'System went live and replaced the manual process. Concurrent booking conflicts handled reliably by the validation logic.',
-      techStack: ['Java', 'Spring Boot', 'React', 'MySQL', 'Docker', 'Scrum', 'Jira'],
     }
   },
   {
@@ -126,7 +99,7 @@ const projects = [
     tagline: 'Designed the study, collected the data, built the model.',
     year: '2025',
     category: 'Research',
-    tech: ['Python', 'Scikit-Learn', 'Pandas', 'Survey Design', 'Expert Research'],
+    tech: ['Python', 'Scikit-Learn', 'Pandas', 'Survey Design', 'Expert Research', 'Decision Tree', 'Ordinal Regression', 'Matplotlib'],
     description: 'End-to-end research project — solo. Studied how psychologists measure stress, designed a survey based on that research, collected responses from Fontys students, and built interpretable ML models to classify stress levels.',
     detail: {
       context: 'I wanted to understand how stress is actually measured — not just technically but conceptually. Spent time reading how psychologists operationalize stress before touching any code.',
@@ -135,7 +108,6 @@ const projects = [
       architecture: 'Survey responses mapped to psychological features (sleep quality, life satisfaction, recent life events). Two models: Decision Tree for interpretability — I traced the decision path to generate actionable feedback per prediction. Ordinal Regression for classification — chosen because stress levels have natural order (low/moderate/high) that standard classifiers ignore.',
       challenges: 'Tiny dataset. 38 records with class imbalance. Ordinal Regression was not covered in the semester — I learned it independently because it fit the problem better than what we were taught.',
       outcomes: '~67% classification accuracy on balanced data (38 records). Given the dataset size, the methodology mattered more than the number — the Decision Tree produced interpretable outputs: if the deciding feature was sleep-related, the system suggested sleep improvements.',
-      techStack: ['Python', 'Pandas', 'Scikit-Learn', 'Decision Tree', 'Ordinal Regression', 'Matplotlib'],
       links: {
         live: 'https://student-stress-fontys.streamlit.app/',
         github: 'https://github.com/eucaliptuskoala/student-stress',
@@ -148,7 +120,7 @@ const projects = [
     tagline: 'The project that became Solen.',
     year: '2025',
     category: 'Academic',
-    tech: ['Java', 'Spring Boot', 'React', 'MySQL', 'Flyway', 'AWS'],
+    tech: ['Java', 'Spring Boot', 'React', 'MySQL', 'Flyway', 'AWS', 'JUnit', 'Mockito'],
     description: 'The direct predecessor to Solen. Same core architecture, same domain structure — Solen is essentially this project rebuilt and improved. First experience deploying to AWS.',
     detail: {
       context: 'Built as an academic project, but treated as a real one. The architectural decisions made here carried forward into Solen almost unchanged.',
@@ -157,7 +129,6 @@ const projects = [
       architecture: 'Same clean structure that became Solen — domain modules isolated from infrastructure. Flyway for migrations. Deployed to AWS.',
       challenges: 'First time deploying to cloud infrastructure. Had to research AWS options, make infrastructure decisions, and figure out deployment from scratch.',
       outcomes: 'The core domain module survived into Solen. AWS deployment worked. The project proved the architecture was worth keeping.',
-      techStack: ['Java', 'Spring Boot', 'React', 'MySQL', 'Flyway', 'JUnit', 'Mockito', 'AWS'],
       links: {
         gitlab_frontend: 'https://git.fhict.nl/I539830/habit_tracker_fe',
         gitlab_backend: 'https://git.fhict.nl/I539830/habit_tracker_be'
@@ -179,7 +150,6 @@ const projects = [
       architecture: 'Two platforms: ASP.NET web app for students, WinForms desktop client for admins. SQL Server backend with Entity Framework. Three-tier architecture throughout.',
       challenges: 'Second semester. Still figuring out how any of this worked. WinForms is not fun to build in. But the separation between admin and user interfaces was a deliberate design decision that I\'m still glad I made.',
       outcomes: 'A working dual-platform application. The idea was solid as well as the execution.',
-      techStack: ['C#', 'ASP.NET', 'WinForms', 'SQL Server'],
       links: {
         gitlab: 'https://git.fhict.nl/I539830/student-guide-application',
       }

@@ -18,11 +18,19 @@ const linkLabels = {
 
 export default function ProjectModal({ project, onClose }) {
   const onCloseRef = useRef(onClose);
+  const dialogRef = useRef(null);
+  const closeBtnRef = useRef(null);
   const [closing, setClosing] = useState(false);
 
   useEffect(() => { onCloseRef.current = onClose; });
 
   const handleClose = () => setClosing(true);
+
+  useEffect(() => {
+    const previouslyFocused = document.activeElement;
+    closeBtnRef.current?.focus();
+    return () => previouslyFocused?.focus?.();
+  }, []);
 
   useEffect(() => {
     if (!closing) return;
@@ -32,7 +40,25 @@ export default function ProjectModal({ project, onClose }) {
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
-    const handler = (e) => e.key === 'Escape' && handleClose();
+    const handler = (e) => {
+      if (e.key === 'Escape') {
+        setClosing(true);
+      } else if (e.key === 'Tab') {
+        const focusables = dialogRef.current?.querySelectorAll(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusables || focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
     document.addEventListener('keydown', handler);
     return () => {
       document.body.style.overflow = '';
@@ -42,8 +68,10 @@ export default function ProjectModal({ project, onClose }) {
 
   const d = project.detail;
   return (
-    <div className={`modal-overlay${closing ? ' closing' : ''}`} onClick={(e) => e.target === e.currentTarget && handleClose()}>
-      <button className="modal-close" onClick={handleClose} aria-label="Close">
+    <div className={`modal-overlay${closing ? ' closing' : ''}`}
+         role="dialog" aria-modal="true" aria-label={project.title} ref={dialogRef}
+         onClick={(e) => e.target === e.currentTarget && handleClose()}>
+      <button className="modal-close" onClick={handleClose} aria-label="Close" ref={closeBtnRef}>
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12m0-12L4 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
       </button>
       <div className="modal-content">
@@ -78,7 +106,7 @@ export default function ProjectModal({ project, onClose }) {
         <div className="modal-section">
           <h3>Tech Stack</h3>
           <div className="modal-tech-list">
-            {d.techStack.map(t => <span key={t}>{t}</span>)}
+            {project.tech.map(t => <span key={t}>{t}</span>)}
           </div>
         </div>
         {d.links && (

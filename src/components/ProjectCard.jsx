@@ -1,6 +1,14 @@
 export default function ProjectCard({ project, onClick }) {
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      onClick(project);
+    }
+  };
+
   return (
-    <div className="project-card" tabIndex={0} role="button" onClick={() => onClick(project)}>
+    <div className="project-card" tabIndex={0} role="button"
+         onClick={() => onClick(project)} onKeyDown={handleKeyDown}>
       <div className="project-card-category">{project.category}</div>
       <div className="project-card-year">{project.year}</div>
       <h3 className="project-card-title">{project.title}</h3>
